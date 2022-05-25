@@ -4,22 +4,25 @@ import { Fragment } from 'react'
 import CarouselComponent from '../component/ui/carousel/carousel'
 import LastEvents from '../component/ui/events/next-events'
 import Header from '../component/styles/header'
-import styles from '../styles/Home.module.css'
+import { Provider } from 'react-redux'
+import store from '../store'
 
 const Home: NextPage = () => {
   return (
     <Fragment>
-      <Header />
-      <Container >
-        <main >
-          <section id='most-visited'>
-            <CarouselComponent />
-          </section>
-          <section id='last-events'>
-            <LastEvents />
-          </section>
-        </main>
-      </Container>
+      <Provider store={store}>
+        <Header />
+        <Container >
+          <main >
+            <section id='most-visited'>
+              <CarouselComponent />
+            </section>
+            <section id='last-events'>
+              <LastEvents />
+            </section>
+          </main>
+        </Container>
+      </Provider>
     </Fragment>
   )
 }

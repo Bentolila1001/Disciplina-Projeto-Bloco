@@ -1,6 +1,5 @@
 import React from 'react'
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
-import { number } from 'yup';
 
 const containerStyle = {
     width: '300px',
@@ -15,7 +14,6 @@ type props = {
     }
 
 }
-
 
 
 const Maps: React.FC<props> = ({ coordenadas }: props) => {
