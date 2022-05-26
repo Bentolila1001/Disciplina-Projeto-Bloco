@@ -1,13 +1,15 @@
 import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from "@mui/material";
 import { Fragment, useState } from "react"
+import { useSelector } from "react-redux";
 
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Login', 'Test', 'Buscar'];
+const settings = ['Profile', 'Logout'];
 
 const Header = (props: any) => {
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
+    //const isAuth = useSelector((state: any) => state.auth.isAuthenticated)
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
@@ -26,9 +28,9 @@ const Header = (props: any) => {
     };
 
     return (
-        <AppBar>
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
+        <AppBar style={{ background: '#106a9e' }}   >
+            <Container maxWidth="xl"   >
+                <Toolbar disableGutters  >
                     <Typography
                         variant="h6"
                         noWrap
@@ -37,8 +39,7 @@ const Header = (props: any) => {
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
+                            fontWeight: 100,
                             letterSpacing: '.3rem',
                             color: 'inherit',
                             textDecoration: 'none',
@@ -92,7 +93,7 @@ const Header = (props: any) => {
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             fontFamily: 'monospace',
-                            fontWeight: 700,
+                            fontWeight: 200,
                             letterSpacing: '.3rem',
                             color: 'inherit',
                             textDecoration: 'none',

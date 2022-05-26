@@ -1,25 +1,29 @@
 import { Card, CardActionArea, CardMedia, CardContent, Typography } from "@mui/material";
+import { string } from "yup";
 
-export default function InformationCard() {
+type props = {
+    name: string
+    imgUrl: string
+}
+
+const InformationCard: React.FC<props> = ({ name, imgUrl }: props) => {
     return (
-        <Card sx={{ maxWidth: 345, maxHeight: 200 }}>
+        <Card sx={{ maxWidth: 345, maxHeight: 200, mb: 2 }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
                     height="140"
-                    image="/static/images/cards/contemplative-reptile.jpg"
-                    alt="green iguana"
+                    image={imgUrl}
+                    alt={name}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
+                        {name}
                     </Typography>
                 </CardContent>
             </CardActionArea>
         </Card>
     );
 }
+
+export default InformationCard

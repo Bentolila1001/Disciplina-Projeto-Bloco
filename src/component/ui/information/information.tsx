@@ -1,7 +1,7 @@
 import { Container, Divider, Grid, Paper, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import { Fragment } from "react"
-import Maps from "../maps/Maps"
+import Maps from "../maps/maps"
 import InformatioCard from './information-card'
 
 type props = {
@@ -13,29 +13,30 @@ type props = {
 const Information: React.FC<props> = ({ name, information, urls }: props) => {
 
     const center = {
-        lat: -3.745,
-        lng: -38.523
+        lat: 44,
+        lng: -80
     };
 
     return (
         <Fragment>
             <Box
                 sx={{
-                    mt: 20,
+                    mt: 15,
+                    mb: 30,
                     width: '100%',
                     height: 300,
                 }}>
                 <Grid
+                    spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}
                     container
                     direction="row"
                     justifyContent="flex-start"
                     alignItems="flex-start"
                 >
-                    <Grid item xs>
+                    <Grid item xs sm md >
                         <div>
                             <Typography
                                 variant="h3"
-                                noWrap
                                 component="h3"
                             >
                                 {name}
@@ -47,35 +48,33 @@ const Information: React.FC<props> = ({ name, information, urls }: props) => {
                                 noWrap
                                 component="h5"
                                 sx={{
-                                    mt: 10,
+                                    mt: 5,
                                 }}>
                                 Detalhes:
                             </Typography>
                         </div>
                         <div>
                             <Typography
-                                noWrap
                                 component="h5"
                                 sx={{
-                                    mt: 10,
+                                    mt: 5,
+                                    mr: 4
                                 }}>
                                 {information}
                             </Typography>
                         </div>
                     </Grid>
-                    <Divider orientation="vertical" flexItem>
+                    <Divider orientation="vertical" flexItem sx={{ mr: 8 }}>
                     </Divider>
-                    <Grid item xs>
-                        <InformatioCard />
-                        <InformatioCard />
+                    <Grid item xs sm md>
+                        <InformatioCard name="praia" imgUrl="/img.jpg" />
+                        <InformatioCard name="praia" imgUrl="/img.jpg" />
                     </Grid>
-                    <Grid item xs>
+                    <Grid item xs sm md >
                         <Maps coordenadas={center} />
                     </Grid>
                 </Grid>
             </Box>
-
-
         </Fragment>
     )
 }
