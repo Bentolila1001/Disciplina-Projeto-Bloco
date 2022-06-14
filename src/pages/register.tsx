@@ -1,8 +1,8 @@
 import { Box } from "@mui/material"
 import { NextPage } from "next"
 import { Fragment } from "react"
-import SignUp from "../component/forms/register-page"
-import Header from "../component/styles/header"
+import SignUp from "../presentantion/component/forms/register-page"
+import Header from "../presentantion/component/styles/header"
 
 const Register: NextPage = () => {
     return (
